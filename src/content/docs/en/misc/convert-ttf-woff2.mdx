@@ -1,0 +1,38 @@
+---
+title: 'Convert variable font TTF to WOFF2'
+description: 'How to convert variable font: TTF to WOFF2 format'
+i18nReady: false
+---
+
+<div class="align-items:center bg:blue-80 border-radius:8 flex justify-content:center my:10 overflow:hidden rel">
+    <div class="overflow:hidden">
+        <p class="my:40 fg:black">Drag and drop <code class="fg:black">.TTF</code> files here</p>
+        <div class="dropzone-wrap left:0 top:0 flex h:full w:full align-items:center justify-content:center abs cursor:pointer">
+            <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" class="w:full h:full"></div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/awesome-notifications@3.1.3/dist/index.var.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awesome-notifications@3.1.3/dist/style.css" />
+<link rel="stylesheet" href="/tutorial/misc/convert-ttf-woff2.css" />
+<script src="/tutorial/misc/convert-ttf-woff2.js"></script>
+
+
+If you have a variable font with `TTF` format on your computer and want to use it on your site, you must convert the file to `WOFF2` format.
+
+`WOFF2` format font file is recommended by [web.dev](https://web.dev/font-best-practices/) to use for websites, and the format has better compression with an average over 30% reduction in file size, making your site faster and lightweight.
+
+The best way to convert the font file from `TTF` to `WOFF2` format is by using Google's tool available at [https://github.com/google/woff2](https://github.com/google/woff2).
+
+Setuping the `google/woff2` tool may be complicated for you, but no worries, we have set up the tool on our server, and you only need to upload it from the above upload form, and your `WOFF2` file is ready to download.
+
+## One-click Google Fonts self-host
+
+If you want to self-host the Google Fonts on your WordPress site and download the file from the Google Fonts site, you will find out that the downloaded font file format is `TTF`. Convert the file to `WOFF2` by using the upload form above. Some of you may find this workflow cumbersome to self-host Google Fonts.
+
+Fortunately, we have built the [Yabe Webfont](/) plugin, a WordPress plugin with a one-click Google Fonts import feature that allows you to self-host the files in seconds.
+
+It offers multiple font file formats that can be chosen: `WOFF2`, `WOFF`, and `TTF`.
+
+It has first-class visual builder integration for the most popular visual builders and themes, including [Elementor](/en/integration/elementor), [Oxygen](/en/integration/oxygen), [Bricks](/en/integration/bricks), and even [Gutenberg](/en/integration/gutenberg).
+

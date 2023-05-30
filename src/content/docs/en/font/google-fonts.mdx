@@ -1,0 +1,83 @@
+---
+title: Self-hosting Google Fonts
+description: 'How to self-host Google Fonts on WordPress website.'
+i18nReady: false
+---
+
+[Google Fonts](https://fonts.google.com) is a library of over 1,500 open source font families and APIs for convenient use via CSS and Android.
+
+Embedding Google Fonts in your website via the Google Fonts Web API or Google's server is a popular way to add custom fonts to a WordPress website. 
+
+However, Google's server requires the user's IP address and the user agent to serve the font files, as described in the [Google Fonts privacy policy](https://developers.google.com/fonts/faq/privacy). In January 2022 [the German Court declared](https://rewis.io/urteile/urteil/lhm-20-01-2022-3-o-1749320/) that Google Fonts is not GDPR/DSGVO compliant.
+
+To comply with the GDPR law, you must self-host Google Fonts on your WordPress website.
+
+Don't worry! It's easy to do with Yabe Webfont. Just a few clicks, and you're done.
+
+## Step 1: Add new font
+
+Go to **Appearance → Yabe Webfont** and click the **Import Google Fonts** button.
+
+<a data-fslightbox href="/tutorial/font/adobe-fonts/1.png">
+![Import Google Fonts](/tutorial/font/google-fonts/1.png)
+</a>
+
+## Step 2: Search the font family
+
+Find the font family you want to add from the list or start typing to search.
+
+<a data-fslightbox href="/tutorial/font/adobe-fonts/2.png">
+![Search the font family](/tutorial/font/google-fonts/2.png)
+</a>
+
+## Step 3: Selecting font subsets
+
+Subset is a file that contains a custom (and usually limited) collection of [glyphs](https://fonts.google.com/knowledge/glossary/glyph).
+Learn more about [subsetting](https://fonts.google.com/knowledge/glossary/subsetting).
+
+Some fonts have multiple subsets; you can select the ones you want to use.
+
+<a data-fslightbox href="/tutorial/font/adobe-fonts/3.png">
+![Selecting font subsets](/tutorial/font/google-fonts/3.png)
+</a>
+
+## Step 4: More file formats
+
+You can select multiple file formats to [support more browsers](https://caniuse.com/?search=Font%20Format).
+
+Available file formats:
+- **`WOFF` (Web Open Font Format)**: a compressed file format created specifically for web fonts.
+- **`WOFF2` (Web Open Font Format 2)**: a successor to WOFF, it offers better compression than WOFF and supports [variable fonts](https://fonts.google.com/knowledge/glossary/variable_fonts).
+- **`TTF` (TrueType Font)**: an uncompressed font file format for desktop use.
+
+The recommended font format is `WOFF2`.
+
+<a data-fslightbox href="/tutorial/font/adobe-fonts/4.png">
+![More file formats](/tutorial/font/google-fonts/4.png)
+</a>
+
+## Step 5: Using variable fonts (optional)
+
+The [variable fonts](https://fonts.google.com/knowledge/glossary/variable_fonts) format enables a font file to hold various stylistic variations.
+
+If the font family has the variable fonts format, you can use it by ticking the **Variable Fonts** checkbox.
+
+<a data-fslightbox href="/tutorial/font/adobe-fonts/5.png">
+![Using variable fonts](/tutorial/font/google-fonts/5.png)
+</a>
+
+## Step 6: Choose font variants
+
+You can enable/disable the font variants you want to use. Or you can allow all variants by ticking the **Variants** checkbox.
+
+<a data-fslightbox href="/tutorial/font/adobe-fonts/6.png">
+![Choose font variants](/tutorial/font/google-fonts/6.png)
+</a>
+
+## Step 7: Publish the font
+
+Ensure the **Status** toggle is set to `Published`, and click the **Save** button.
+
+<a data-fslightbox href="/tutorial/font/custom-font/9.png">
+![](/tutorial/font/custom-font/9.png)
+</a>

@@ -1,0 +1,86 @@
+---
+title: Adding Custom Font
+description: 'How to add custom fonts to WordPress.'
+i18nReady: false
+---
+
+Great news! You don't need coding skills to add custom fonts to your WordPress website. Plus, you won't have to go through the hassle of setting up SFTP to upload your font files to the server. Instead, use the WordPress media uploader to upload your font files easily. It's that simple!
+
+## Step 1: Add new font
+
+Go to **Appearance → Yabe Webfont** and click the **Add New** button.
+
+<a data-fslightbox href="/tutorial/font/custom-font/1.png">
+![Add new custom font on WordPress website](/tutorial/font/custom-font/1.png)
+</a>
+
+## Step 2: Provide font details
+
+<a data-fslightbox href="/tutorial/font/custom-font/2.png">
+![Adding font details](/tutorial/font/custom-font/2.png)
+</a>
+
+1. Give your font a family name on the **Font Family** field.
+
+The family name will be used to identify the font in the CSS code. You can also change the title of your font on the **Title** field to make it easier to identify your font in the font lists.
+
+2. (Optional) Set the **Font Display** option to **Block**.
+
+This option controls how font files are loaded and displayed by the browser. Learn more about the ["Font Display"](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+
+3. (Optional) fill the **CSS Selector | Fallback Font** field with `*|sans-serif`. 
+
+The `*` selector will assign the font to all elements on your website.
+The font will be fallback to the `sans-serif` if the font file fails to load.
+
+
+## Step 3: Add font variants
+
+By default, a variant is added to the font.
+On the **font-weight** field, choose the weight from the lists. You can also use a custom weight by typing the value on the field, such as `700` or `100 900` for variable fonts.
+
+<a data-fslightbox href="/tutorial/font/custom-font/3.png">
+![](/tutorial/font/custom-font/3.png)
+</a>
+
+For additional font variants, click the **Add variant** button.
+
+<a data-fslightbox href="/tutorial/font/custom-font/4.png">
+![](/tutorial/font/custom-font/4.png)
+</a>
+
+## Step 4: Upload font files
+
+1. Choose the font variant you want to upload the font file to and click the <code><i class="fa-solid fa-pen-to-square"></i></code> icon to expand the variant settings panel.
+
+<a data-fslightbox href="/tutorial/font/custom-font/5.png">
+![](/tutorial/font/custom-font/5.png)
+</a>
+
+2. Click the **Upload Fonts** button to open the WordPress media uploader.
+
+<a data-fslightbox href="/tutorial/font/custom-font/6.png">
+![](/tutorial/font/custom-font/6.png)
+</a>
+
+3. Upload your font files to the media library or choose the existing font files from the media library and click the **Select** button.
+
+<a data-fslightbox href="/tutorial/font/custom-font/7.png">
+![Uploading font files with WordPress media uploader](/tutorial/font/custom-font/7.png)
+</a>
+
+Once the font files are uploaded, they will be assigned to the font variant.
+
+<a data-fslightbox href="/tutorial/font/custom-font/8.png">
+![](/tutorial/font/custom-font/8.png)
+</a>
+
+Continue to add font files to other variants if needed.
+
+## Step 5: Publish the font
+
+Ensure the **Status** toggle is set to `Published`, and click the **Save** button.
+
+<a data-fslightbox href="/tutorial/font/custom-font/9.png">
+![](/tutorial/font/custom-font/9.png)
+</a>

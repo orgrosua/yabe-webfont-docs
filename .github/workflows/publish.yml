@@ -1,0 +1,72 @@
+name: Publish
+
+on:
+  push:
+    branches: [master]
+
+# Automatically cancel in-progress actions on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    # github action will only run if commit is made by anyone on master branch
+    # (temporary) if commit is made by suabahasa on any branch to deploy to production 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Run a build step here if your project requires
+      
+      - name: Install and build with Astro
+        uses: ./.github/actions/astro
+
+      # Set branch name for Cloudflare Pages
+
+      # Pseudocode:
+      # if (commit is made by anyone on master branch) {
+      #   branch: master
+      # } else if (commit is made by owner) {
+      #   if (commit is made by owner and contain commit message contains "[build:%branch_name%]") {
+      #     branch: %branch_name%
+      #   } else {
+      #     branch: current github branch
+      #   }
+      # } else {
+      #   branch: current github branch
+      # }
+      # Deprecating save-state and set-output commands, use environment variables instead
+      - name: Set branch name
+        id: cloudflare_branch
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            echo "CLOUFLARE_BRANCH=master" >> $GITHUB_ENV
+          elif [ "${{ github.actor }}" = "suabahasa" ]; then
+            if [[ "${{ github.event.head_commit.message }}" =~ \[build:.*\] ]]; then
+              echo "CLOUFLARE_BRANCH=${BASH_REMATCH[1]}" >> $GITHUB_ENV
+            else
+              echo "CLOUFLARE_BRANCH=${{ github.ref }}" >> $GITHUB_ENV
+            fi
+          else
+            echo "CLOUFLARE_BRANCH=${{ github.ref }}" >> $GITHUB_ENV
+          fi
+
+      # Publish to Cloudflare Pages
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }} #YOUR_ACCOUNT_ID
+          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }} #YOUR_PROJECT_NAME
+          directory: ./dist/  #YOUR_ASSET_DIRECTORY
+          branch: ${{ env.CLOUFLARE_BRANCH }}
+
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}

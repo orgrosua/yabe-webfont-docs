@@ -1,0 +1,83 @@
+---
+const googleFontsFamilies = [
+	'family=IBM+Plex+Mono:ital@0;1',
+	'family=Lexend+Deca:wght@100..900',
+	'family=Outfit:wght@100..900',
+	'family=Roboto:wght@100..900',
+];
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="dns-prefetch" href="http://cdn.jsdelivr.net" />
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="1eDue2rtHMqD8GntwGZRRfTr3A1fsjJJWSobL5qbLm4" />
+
+<!-- MasterCSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@master/normal.css@beta" />
+<script type="module">
+	import ThemeService from 'https://cdn.jsdelivr.net/npm/theme-service@beta/+esm';
+	import { MasterCSS } from 'https://cdn.jsdelivr.net/npm/@master/css@beta/dist/index.mjs';
+
+	const themeService = new ThemeService({
+		store: 'theme',
+	});
+
+	window.themeService = themeService;
+
+	const config = {};
+
+	const masterCSS = new MasterCSS(config);
+
+	window.masterCSS = masterCSS;
+</script>
+
+<!-- Load Fonts -->
+<link
+	href={`https://fonts.googleapis.com/css2?${googleFontsFamilies.join('&')}&display=swap`}
+	rel="stylesheet"
+/>
+
+<!-- Font Awesome -->
+<script
+	data-search-pseudo-elements
+	src="https://kit.fontawesome.com/ee89d90c81.js"
+	crossorigin="anonymous"
+></script>
+
+<!-- Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/fslightbox@3.4.1/index.min.js"></script>
+
+<script>
+	import '../scripts/main.js';
+</script>
+
+<!-- Analytics script -->
+<script type="module">
+	import Plausible from 'https://cdn.jsdelivr.net/npm/plausible-tracker/+esm';
+
+	const plausible = Plausible({
+		apiHost: 'https://plausible.suabahasa.dev',
+		domain: 'webfont.yabe.land',
+		// trackLocalhost: true,
+	});
+
+	// This tracks the current page view and all future ones as well
+	plausible.enableAutoPageviews();
+
+	// Track all existing and future outbound links
+	plausible.enableAutoOutboundTracking();
+
+	window.plausible = plausible;
+</script>
+
+<!-- Scrollable a11y code helper -->
+<script type="module" src="/make-scrollable-code-focusable.js"></script>
