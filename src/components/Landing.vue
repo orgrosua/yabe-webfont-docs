@@ -3,9 +3,19 @@
         <div class="flex w:full max-w:xl align-items:center px:32">
             <a href="/" class="flex">
                 <h1 class="py:16 f:30">
+                    <svg class="svg-inline--fa fill:current" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="m255.487 348.511-38.054 21.97-15.574 124.592c-.536 4.286.794 8.596 3.653 11.834s6.97 5.093 11.289 5.093h75.578c4.32 0 8.43-1.855 11.289-5.093s4.189-7.548 3.653-11.834l-21.591-172.724c-8.206 10.444-18.406 19.327-30.243 26.162z" />
+                            <path d="m270.097 158.141v-143.082c0-5.219-2.702-10.066-7.142-12.81-4.44-2.743-9.982-2.994-14.651-.659l-27.05 13.525c-25.759 12.879-41.761 38.771-41.761 67.57v83.59c0 16.328 5.224 31.449 14.064 43.817l29.912-17.27c11.989-15.749 28.037-27.701 46.628-34.681z" />
+                            <path d="m236.976 268.498c-13.719-5.811-23.992-18.2-26.868-33.186l-145.939 84.259c-4.52 2.609-7.367 7.373-7.523 12.59-.157 5.217 2.399 10.143 6.755 13.018l25.238 16.664c12.671 8.366 27.115 12.574 41.598 12.574 12.988 0 26.008-3.386 37.799-10.194l72.391-41.795c14.14-8.164 24.624-20.249 30.914-34.088z" />
+                            <path d="m417.584 233.375-72.391-41.795c-17.475-10.09-37.835-12.769-57.325-7.547-3.598.964-7.085 2.18-10.446 3.625 13.427 7.871 22.47 22.446 22.47 39.103 0 13.661-6.087 25.919-15.68 34.232l146.636 84.66c2.327 1.344 4.927 2.018 7.529 2.018 2.452 0 4.906-.598 7.135-1.798 4.596-2.473 7.583-7.149 7.896-12.359l1.813-30.189c1.726-28.747-12.696-55.551-37.637-69.95z" />
+                            <circle cx="254.59" cy="226.761" r="15.184" />
+                        </g>
+                    </svg>
                     Yabe Webfont
                 </h1>
             </a>
+            <div class="mx:10"><span class="bg:blue-90 r:6 px:10 py:4 font:mono">v{{ wp_v12.version }}</span></div>
             <div class="flex-grow:1"></div>
             <nav class="hidden flex@md primary-nav">
                 <div class="flex align-items:center mr:18">
@@ -16,7 +26,7 @@
                     <a href="https://rosua.org/checkout/order-history" class="px:15 bg:blue-90:hover py:8:hover r:8">Account</a>
                 </div>
                 <div class="flex align-items:center">
-                    <a href="/#pricing" class="px:12 py:8 r:8 bg:green bg:green-40:hover fg:white">Get Yabe Webfont</a>
+                    <a href="https://wordpress.org/plugins/yabe-webfont" class="px:12 py:8 r:8 bg:green bg:green-40:hover fg:white">Get Yabe Webfont</a>
                 </div>
             </nav>
             <div class="">
@@ -146,13 +156,22 @@
             </div>
             <!-- CTA: Get Yabe Webfont Now -->
             <div class="cta my:20 flex flex:column gap:40">
-                <a href="/#pricing" class="flex gap:10 align-items:center mx:auto py:20 px:48 bg:green bg:green-40:hover fg:white f:20 rounded">
-                    Get Yabe Webfont Now
+                <a :href="wp_v12.download_link" class="flex gap:10 align-items:center mx:auto py:20 px:48 bg:green bg:green-40:hover fg:white f:20 rounded">
+                    Download Yabe Webfont Now
                     <i class="fa-solid fa-arrow-right-long hidden block@3xs a:hover_{translateX(35%)} ~easing:ease ~duration:300ms"></i>
                 </a>
 
                 <div class="badges__list grid-cols:1 grid-cols:2@sm grid-cols:4@md">
                     <div class="badges__item">
+                        <div class="f:24">
+                            <i class="fa-solid fa-hand-holding-dollar fg:#29b077"></i>
+                        </div>
+                        <div class="f:12 text:left">
+                            <strong>Free</strong> Forever
+                        </div>
+                    </div>
+
+                    <!-- <div class="badges__item">
                         <div class="f:24">
                             <i class="fa-solid fa-badge-dollar fg:#29b077"></i>
                         </div>
@@ -160,7 +179,7 @@
                             <strong>14-day Money</strong>
                             <br> Back Guarantee
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="badges__item">
                         <div class="f:24">
@@ -183,18 +202,27 @@
                             <i class="fa-solid fa-face-smile-hearts"></i>
                         </div>
                         <div class="f:12 text:left">
-                            <strong> {{ happyCustomers }}+ Happy</strong>
+                            <strong> {{ happyCustomers + wp_v12.active_installs }}+ Happy</strong>
                             Users
                         </div>
                     </div>
 
-                    <div class="badges__item">
+                    <!-- <div class="badges__item">
                         <div class="f:24 fg:#4e6fc3">
                             <i class="fa-brands fa-wordpress"></i>
                         </div>
                         <div class="f:12 text:left">
                             <strong> {{ activeSites }}+ Active</strong>
                             Sites
+                        </div>
+                    </div> -->
+
+                    <div class="badges__item">
+                        <div class="f:24 fg:#4e6fc3">
+                            <i class="fa-brands fa-wordpress"></i>
+                        </div>
+                        <div class="f:12 text:left">
+                            <strong>{{ totalDownloads }}+ Download</strong> & Counting
                         </div>
                     </div>
                 </div>
@@ -329,7 +357,10 @@
                                     <div class="p:20">
                                         <div class="flex flex:column align-items:center text:center">
                                             <img :src="builder.icon" :alt="builder.name" class="w:64 h:64">
-                                            <div class="pt:10">{{ builder.name }}</div>
+                                            <div class="pt:10">
+                                                {{ builder.name }}
+                                                <i v-if="builder.pro" class="fa-solid fa-rectangle-pro fg:blue"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
@@ -449,7 +480,7 @@
                 </div>
 
                 <div class="mx:auto my:30 flex flex:column gap:40">
-                    <div class="badges__list grid-cols:1 grid-cols:2@sm grid-cols:3@md">
+                    <div class="badges__list grid-cols:1 grid-cols:2@sm grid-cols:4@md">
                         <div class="badges__item">
                             <div class="f:24">
                                 <i class="fa-solid fa-badge-dollar fg:#29b077"></i>
@@ -486,6 +517,16 @@
                             </div>
                         </div>
 
+                        <div class="badges__item">
+                            <div class="f:24 fg:#4e6fc3">
+                                <i class="fa-brands fa-wordpress"></i>
+                            </div>
+                            <div class="f:12 text:left">
+                                <strong> {{ activeSites }}+ Active</strong>
+                                Sites
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -508,6 +549,10 @@ const isMobileMenuOpen = ref(false);
 
 const happyCustomers = ref(0);
 const activeSites = ref(0);
+const totalDownloads = ref(0);
+
+const wp_v10 = ref({});
+const wp_v12 = ref({});
 
 const HIGHLIGHTED_FEATURES = [
     {
@@ -678,16 +723,19 @@ const VISUAL_BUILDERS = [
         name: 'Oxygen',
         url: '/en/integration/oxygen',
         icon: 'assets/landing/builder-oxygen.svg',
+        pro: true,
     },
     {
         name: 'Bricks',
         url: '/en/integration/bricks',
         icon: 'assets/landing/builder-bricks.svg',
+        pro: true,
     },
     {
         name: 'Divi',
         url: null,
         icon: 'assets/landing/builder-divi.png',
+        pro: true,
     },
     {
         name: 'Kadence WP',
@@ -698,26 +746,31 @@ const VISUAL_BUILDERS = [
         name: 'Breakdance',
         url: '/en/integration/breakdance',
         icon: 'assets/landing/builder-breakdance.svg',
+        pro: true,
     },
     {
         name: 'Cwicly',
         url: '/en/integration/cwicly',
         icon: 'assets/landing/builder-cwicly.png',
+        pro: true,
     },
     {
         name: 'Builderius',
         url: '/en/integration/builderius',
         icon: 'assets/landing/builder-builderius.svg',
+        pro: true,
     },
     {
         name: 'Zion Builder',
         url: '/en/integration/zion-builder',
         icon: 'assets/landing/builder-zion.svg',
+        pro: true,
     },
     {
         name: 'Beaver Builder',
         url: '/en/integration/beaver-builder',
         icon: 'assets/landing/builder-beaver.svg',
+        pro: true,
     },
     {
         name: 'GeneratePress',
@@ -733,11 +786,13 @@ const VISUAL_BUILDERS = [
         name: 'Greenshift',
         url: null,
         icon: 'assets/landing/builder-greenshift.png',
+        pro: true,
     },
     {
         name: 'Spectra',
         url: null,
         icon: 'assets/landing/builder-spectra.svg',
+        pro: true,
     },
     {
         name: 'Plugins & Themes Dev',
@@ -887,7 +942,7 @@ onBeforeMount(() => {
     fetch('https://rosua.org/wp-json/rosua-edd/v1/stats/total_users')
         .then(res => res.json())
         .then(res => {
-            happyCustomers.value = res[0].count_users;
+            happyCustomers.value += res[0].count_users;
         })
         .catch(err => {
             console.log(err);
@@ -898,10 +953,24 @@ onBeforeMount(() => {
         .then(res => {
             // search array of object with download_id = 18 (Yabe Webfont)
             const download = res.find(item => item.download_id === 18);
-            activeSites.value = download.count_sites;
+            activeSites.value += download.count_sites;
+            totalDownloads.value += download.count_sites;
         })
         .catch(err => {
             console.log(err);
+        });
+
+    fetch('https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&slug=yabe-webfont')
+        .then(response => response.json())
+        .then(data => {
+            wp_v12.value = data;
+            activeSites.value += wp_v12.value.active_installs;
+        });
+    fetch('https://api.wordpress.org/plugins/info/1.0/yabe-webfont.json')
+        .then(response => response.json())
+        .then(data => {
+            wp_v10.value = data;
+            totalDownloads.value += wp_v10.value.downloaded;
         });
 });
 
@@ -1112,5 +1181,4 @@ $tw-color-gray-900: #111827;
             background-color: hexAlpha(#fff, 0.1);
         }
     }
-}
-</style>
+}</style>
