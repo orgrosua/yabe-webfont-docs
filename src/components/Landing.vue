@@ -710,9 +710,9 @@ const AS_SEEN_ON = [
 
 const VISUAL_BUILDERS = [
     {
-        name: 'Gutenberg',
-        url: '/en/integration/gutenberg',
-        icon: 'assets/landing/builder-gutenberg.svg',
+        name: 'Classic Editor',
+        url: '/en/integration/classic-editor',
+        icon: 'assets/landing/builder-classic-editor.png',
     },
     {
         name: 'Elementor',
@@ -720,9 +720,30 @@ const VISUAL_BUILDERS = [
         icon: 'assets/landing/builder-elementor.svg',
     },
     {
-        name: 'Oxygen',
-        url: '/en/integration/oxygen',
-        icon: 'assets/landing/builder-oxygen.svg',
+        name: 'Gutenberg',
+        url: '/en/integration/gutenberg',
+        icon: 'assets/landing/builder-gutenberg.svg',
+    },
+    {
+        name: 'GeneratePress',
+        url: null,
+        icon: 'assets/landing/builder-generatepress.svg',
+    },
+    {
+        name: 'Kadence WP',
+        url: null,
+        icon: 'assets/landing/builder-kadencewp.svg',
+    },
+    {
+        name: 'Beaver Builder',
+        url: '/en/integration/beaver-builder',
+        icon: 'assets/landing/builder-beaver.svg',
+        pro: true,
+    },
+    {
+        name: 'Breakdance',
+        url: '/en/integration/breakdance',
+        icon: 'assets/landing/builder-breakdance.svg',
         pro: true,
     },
     {
@@ -732,20 +753,9 @@ const VISUAL_BUILDERS = [
         pro: true,
     },
     {
-        name: 'Divi',
-        url: null,
-        icon: 'assets/landing/builder-divi.png',
-        pro: true,
-    },
-    {
-        name: 'Kadence WP',
-        url: null,
-        icon: 'assets/landing/builder-kadencewp.svg',
-    },
-    {
-        name: 'Breakdance',
-        url: '/en/integration/breakdance',
-        icon: 'assets/landing/builder-breakdance.svg',
+        name: 'Builderius',
+        url: '/en/integration/builderius',
+        icon: 'assets/landing/builder-builderius.svg',
         pro: true,
     },
     {
@@ -755,32 +765,10 @@ const VISUAL_BUILDERS = [
         pro: true,
     },
     {
-        name: 'Builderius',
-        url: '/en/integration/builderius',
-        icon: 'assets/landing/builder-builderius.svg',
-        pro: true,
-    },
-    {
-        name: 'Zion Builder',
-        url: '/en/integration/zion-builder',
-        icon: 'assets/landing/builder-zion.svg',
-        pro: true,
-    },
-    {
-        name: 'Beaver Builder',
-        url: '/en/integration/beaver-builder',
-        icon: 'assets/landing/builder-beaver.svg',
-        pro: true,
-    },
-    {
-        name: 'GeneratePress',
+        name: 'Divi',
         url: null,
-        icon: 'assets/landing/builder-generatepress.svg',
-    },
-    {
-        name: 'Classic Editor',
-        url: '/en/integration/classic-editor',
-        icon: 'assets/landing/builder-classic-editor.png',
+        icon: 'assets/landing/builder-divi.png',
+        pro: true,
     },
     {
         name: 'Greenshift',
@@ -789,9 +777,27 @@ const VISUAL_BUILDERS = [
         pro: true,
     },
     {
+        name: 'Oxygen',
+        url: '/en/integration/oxygen',
+        icon: 'assets/landing/builder-oxygen.svg',
+        pro: true,
+    },
+    {
+        name: 'Pinegrow',
+        url: null,
+        icon: 'assets/landing/builder-pinegrow.svg',
+        pro: true,
+    },
+    {
         name: 'Spectra',
         url: null,
         icon: 'assets/landing/builder-spectra.svg',
+        pro: true,
+    },
+    {
+        name: 'Zion Builder',
+        url: '/en/integration/zion-builder',
+        icon: 'assets/landing/builder-zion.svg',
         pro: true,
     },
     {
@@ -1181,4 +1187,5 @@ $tw-color-gray-900: #111827;
             background-color: hexAlpha(#fff, 0.1);
         }
     }
-}</style>
+}
+</style>

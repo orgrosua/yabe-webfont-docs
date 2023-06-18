@@ -21,9 +21,9 @@ export const { getStaticPaths, get } = OGImageRoute({
 			dir: rtlLanguages.has(getLanguageFromURL(slug)) ? 'rtl' : 'ltr',
 			logo: {
 				path: './src/docs-logo.png',
-				size: [400],
 			},
 			border: { color: [255, 93, 1], width: 20, side: 'inline-start' },
+			// border: { color: [220, 160, 0], width: 20, side: 'inline-start' },
 			bgGradient: [
 				[42, 35, 62],
 				[23, 20, 36],
@@ -58,8 +58,8 @@ export const { getStaticPaths, get } = OGImageRoute({
 				},
 			},
 			fonts: [
-				'https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/work-sans/latin-400-normal.ttf',
-				'https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/work-sans/latin-800-normal.ttf',
+				'https://cdn.jsdelivr.net/npm/@fontsource/work-sans@5.0.3/files/work-sans-latin-400-normal.woff2',
+				'https://cdn.jsdelivr.net/npm/@fontsource/work-sans@5.0.3/files/work-sans-latin-800-normal.woff2',
 			],
 		};
 	},
