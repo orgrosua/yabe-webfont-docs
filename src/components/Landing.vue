@@ -22,7 +22,7 @@
                     <a href="/#features" class="px:15 bg:blue-90:hover py:8:hover r:8">Features</a>
                     <a href="/#pricing" class="px:15 bg:blue-90:hover py:8:hover r:8">Pricing</a>
                     <a href="/en" class="px:15 bg:blue-90:hover py:8:hover r:8">Documentation</a>
-                    <a class="px:15 bg:blue-90:hover py:8:hover r:8">Blogs</a>
+                    <!-- <a class="px:15 bg:blue-90:hover py:8:hover r:8">Blogs</a> -->
                     <a href="https://rosua.org/checkout/order-history" class="px:15 bg:blue-90:hover py:8:hover r:8">Account</a>
                 </div>
                 <div class="flex align-items:center">
@@ -249,7 +249,7 @@
                 <div class="max-w:md grid-cols:1 grid-cols:2@sm grid-cols:4@md gap:20 gap:30@sm align-items:center">
                     <div v-for="seen_on in AS_SEEN_ON" class="flex justify-content:center">
                         <a :href="seen_on.url" target="_blank" rel="noopener noreferrer">
-                            <img :src="seen_on.logo" :alt="seen_on.name" class="max-h:64" :title="seen_on.name">
+                            <img :src="seen_on.logo" :alt="seen_on.name" class="max-h:64 max-w:full" :title="seen_on.name">
                         </a>
                     </div>
                 </div>
@@ -690,6 +690,11 @@ const AS_SEEN_ON = [
         name: 'Design with Cracka',
         url: 'https://youtu.be/uMj0x0ucnOw',
         logo: '/assets/landing/as-seen-on-design-with-cracka.svg',
+    },
+    {
+        name: 'Peak Performance Digital',
+        url: 'https://youtu.be/A0JZzEVIUzQ',
+        logo: '/assets/landing/as-seen-on-design-with-peak-performance-digital.svg',
     },
     {
         name: 'mangwp',
