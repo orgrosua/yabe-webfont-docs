@@ -746,6 +746,12 @@ const VISUAL_BUILDERS = [
         pro: true,
     },
     {
+        name: 'Blocksy',
+        url: null,
+        icon: 'assets/landing/builder-blocksy.svg',
+        pro: true,
+    },
+    {
         name: 'Breakdance',
         url: '/en/integration/breakdance',
         icon: 'assets/landing/builder-breakdance.svg',
