@@ -697,14 +697,19 @@ const AS_SEEN_ON = [
         logo: '/assets/landing/as-seen-on-design-with-peak-performance-digital.svg',
     },
     {
-        name: 'mangwp',
-        url: 'https://youtu.be/M_69nks3fuU',
-        logo: '/assets/landing/as-seen-on-mangwp.png',
-    },
-    {
         name: 'Jornes.net',
         url: 'https://jornes.net/blog/wordpress-plugins/yabe-webfont-self-host-google-fonts-locally',
         logo: '/assets/landing/as-seen-on-jornes.png',
+    },
+    {
+        name: 'Gold Penguin',
+        url: 'https://goldpenguin.org/blog/yabe-webfont-review/',
+        logo: '/assets/landing/as-seen-on-gold-penguin.png',
+    },
+    {
+        name: 'mangwp',
+        url: 'https://youtu.be/M_69nks3fuU',
+        logo: '/assets/landing/as-seen-on-mangwp.png',
     },
     // {
     // 	name: 'Wildcard Group',
