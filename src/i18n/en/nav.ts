@@ -20,6 +20,7 @@ export default [
 	{ text: 'Integration', header: true, type: 'learn', key: 'integration' },
 	{ text: 'Theme / Plugin Developers', slug: 'integration/developer', key: 'integration/developer' },
 	{ text: 'Beaver Builder', slug: 'integration/beaver-builder', key: 'integration/beaver-builder' },
+	{ text: 'Blocksy', slug: 'integration/blocksy', key: 'integration/blocksy' },
 	{ text: 'Breakdance', slug: 'integration/breakdance', key: 'integration/breakdance' },
 	{ text: 'Bricks', slug: 'integration/bricks', key: 'integration/bricks' },
 	{ text: 'Builderius', slug: 'integration/builderius', key: 'integration/builderius' },
@@ -32,6 +33,7 @@ export default [
 	{ text: 'Gutenberg', slug: 'integration/gutenberg', key: 'integration/gutenberg' },
 	{ text: 'Kadence WP', slug: 'integration/kadence-wp', key: 'integration/kadence-wp' },
 	{ text: 'Oxygen', slug: 'integration/oxygen', key: 'integration/oxygen' },
+	{ text: 'Pinegrow', slug: 'integration/pinegrow', key: 'integration/pinegrow' },
 	{ text: 'Spectra', slug: 'integration/spectra', key: 'integration/spectra' },
 	{ text: 'Zion Builder', slug: 'integration/zion-builder', key: 'integration/zion-builder' },
 

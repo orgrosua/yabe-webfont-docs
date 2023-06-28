@@ -411,7 +411,6 @@
             </div>
         </div>
 
-
         <!-- Pricing -->
         <div id="pricing" class="block-pricing max-w:xl flex flex:column my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
 
@@ -447,7 +446,7 @@
 
             <div class="pricing__wall w:full bg:white my:30 ">
 
-                <div class="pricing__container grid-cols:1 grid-cols:2@md gap:20 mx:15%@md ">
+                <div :class="availablePricing.length % 3 === 0 ? 'grid-cols:3@md mx:5%@md' : 'grid-cols:2@md mx:15%@md'" class="pricing__container gap:20 grid-cols:1">
                     <div v-for="price in availablePricing" :class="{ 'most-popular': price.isMostPopular, 'emphasized': price.isEmphasized }" class="pricing__item r:8 p:32 p:40@md">
                         <div class="flex align-items:center justify-content:space-between gap-x:16">
                             <h3 class="pricing__item-title fg:gray-10 f:20 font:semibold lh:1.8">{{ price.title }}</h3>
@@ -459,11 +458,16 @@
                             </p>
                         </div>
                         <p class="pricing__item-subtitle mt:16 f:16 lh:1.72 fg:gray-40">{{ price.subtitle }}</p>
-                        <p class="pricing__item-amount mt:24 flex align-items:baseline gap-x:4">
+                        <p v-if="price.amount" class="pricing__item-amount mt:24 flex align-items:baseline gap-x:4">
                             <span class="f:36 font:bold ls:0.4 fg:gray-10">${{ price.amount }}</span>
                             <span v-if="price.duration !== 'one-time'" class="f:16 font:semibold lh:1.72 fg:gray-40">/year</span>
                         </p>
-                        <a :href="price.purchaseLink" class="pricing__item-buy mt:24 block r:8 py:8 px:12 text:center f:16 font:semibold lh:1.72 focus-visible:outline outline-offset:2:focus-visible outline-color:blue:focus-visible">Buy</a>
+                        <p v-else class="pricing__item-amount mt:24 flex align-items:baseline gap-x:4">
+                            <span class="f:36 font:bold ls:0.4 fg:gray-10">Free</span>
+                        </p>
+                        <a :href="price.purchaseButton.url" class="pricing__item-buy mt:24 block r:8 py:8 px:12 text:center f:16 font:semibold lh:1.72 focus-visible:outline outline-offset:2:focus-visible outline-color:blue:focus-visible">
+                            {{ price.purchaseButton.text ?? 'Buy' }}
+                        </a>
                         <ul role="list" class="pricing__item-feature-container mt:32 f:16 lh:1.72 fg:gray-50 mt:40@lg">
                             <li v-for="feature in price.features" class="flex gap-x:12">
                                 <template v-if="typeof feature === 'object'">
@@ -610,10 +614,10 @@ const TESTIMONIALS = [
     },
     {
         createdAt: '2023-02-06',
-        submitterName: 'Renato Corluka',
-        submitterAvatar: '/assets/landing/testimonial-renato-corluka.jpg',
-        submitterTitle: 'Recoda.me',
-        message: `Hosting fonts locally is a must-have for sites that operate within the EU. And this is the most painless way to host them locally. You can configure everything you need from the plugin interface withe ease.`
+        submitterName: 'Adam Lowe',
+        submitterAvatar: 'https://s.gravatar.com/avatar/a1708192448e172b8489311e318700b9?s=100',
+        submitterTitle: 'President at Peak Performance Digital',
+        message: `I tested this plugin last week and am very impressed. It goes well beyond what the typical free font managers do. It makes the whole process super-simple, while still giving you plenty of control if you need it. I give it an A+!`
     },
     {
         createdAt: '2023-02-04',
@@ -624,10 +628,17 @@ const TESTIMONIALS = [
     },
     {
         createdAt: '2023-02-06',
-        submitterName: 'Adam Lowe',
-        submitterAvatar: 'https://s.gravatar.com/avatar/a1708192448e172b8489311e318700b9?s=100',
-        submitterTitle: 'President at Peak Performance Digital',
-        message: `I tested this plugin last week and am very impressed. It goes well beyond what the typical free font managers do. It makes the whole process super-simple, while still giving you plenty of control if you need it. I give it an A+!`
+        submitterName: 'Renato Corluka',
+        submitterAvatar: '/assets/landing/testimonial-renato-corluka.jpg',
+        submitterTitle: 'Recoda.me',
+        message: `Hosting fonts locally is a must-have for sites that operate within the EU. And this is the most painless way to host them locally. You can configure everything you need from the plugin interface withe ease.`
+    },
+    {
+        createdAt: '2023-06-24',
+        submitterName: 'Michael Culham',
+        submitterAvatar: 'https://s.gravatar.com/avatar/aa5cc47e1c0cf4f1fa94290472bb13b3861abf992fb9b1be418ee7b16c2eb186?s=100',
+        submitterTitle: 'Bunnyduck.design',
+        message: `I got this and I love it. Makes adding Google Fonts insanely easy and it’s also a much easier font system than the native Bricks one. Thanks for mankind it and saving me a load of time!`
     },
     {
         createdAt: '2023-02-01',
@@ -826,6 +837,41 @@ const VISUAL_BUILDERS = [
 const PRICING = [
     {
         duration: 'year',
+        amount: 0,
+        isMostPopular: false,
+        isEmphasized: false,
+        title: 'Starter',
+        subtitle: 'Get started with the free version and enjoy the full features',
+        features: [
+            'All features',
+            {
+                icon: 'fa-regular fa-asterisk',
+                text: 'Limited integrations'
+            },
+            {
+                icon: 'fa-regular fa-planet-ringed',
+                text: 'Unlimited personal sites'
+            },
+            {
+                icon: 'fa-regular fa-planet-ringed',
+                text: 'Unlimited client sites'
+            },
+            {
+                icon: 'fa-solid fa-rotate',
+                text: 'Free updates'
+            },
+            {
+                icon: 'fa-solid fa-messages',
+                text: 'Community support'
+            },
+        ],
+        purchaseButton: {
+            text: 'Download',
+            url: 'https://wordpress.org/plugins/yabe-webfont',
+        },
+    },
+    {
+        duration: 'year',
         amount: 19,
         isMostPopular: false,
         isEmphasized: false,
@@ -833,6 +879,7 @@ const PRICING = [
         subtitle: 'Best for blogger, individual & solopreneur',
         features: [
             'All features',
+            'All integrations',
             {
                 icon: 'fa-regular fa-planet-ringed',
                 text: 'Unlimited personal sites'
@@ -846,7 +893,7 @@ const PRICING = [
                 text: 'Standard support'
             },
         ],
-        purchaseLink: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=1',
+        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=1' },
     },
     {
         duration: 'year',
@@ -857,6 +904,7 @@ const PRICING = [
         subtitle: 'Perfect For Agency Owners with high volume',
         features: [
             'All features',
+            'All integrations',
             {
                 icon: 'fa-regular fa-planet-ringed',
                 text: 'Unlimited personal sites'
@@ -874,7 +922,7 @@ const PRICING = [
                 text: 'Standard support'
             },
         ],
-        purchaseLink: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=2',
+        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=2' },
     },
     {
         duration: 'one-time',
@@ -885,6 +933,7 @@ const PRICING = [
         subtitle: 'Best for blogger, individual & solopreneur',
         features: [
             'All features',
+            'All integrations',
             {
                 icon: 'fa-regular fa-planet-ringed',
                 text: 'Unlimited personal sites'
@@ -898,7 +947,7 @@ const PRICING = [
                 text: 'Standard support (first year)'
             },
         ],
-        purchaseLink: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=3',
+        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=3' },
     },
     {
         duration: 'one-time',
@@ -909,6 +958,7 @@ const PRICING = [
         subtitle: 'Perfect For Agency Owners with high volume',
         features: [
             'All features',
+            'All integrations',
             {
                 icon: 'fa-regular fa-planet-ringed',
                 text: 'Unlimited personal sites'
@@ -926,7 +976,7 @@ const PRICING = [
                 text: 'Standard support (first year)'
             },
         ],
-        purchaseLink: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=4',
+        purchaseButton: { url: 'https://rosua.org/checkout/?edd_action=add_to_cart&download_id=18&edd_options[price_id]=4' },
     },
 ];
 
