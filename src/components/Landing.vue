@@ -689,6 +689,13 @@ const TESTIMONIALS = [
         submitterTitle: '',
         message: `Yes it's easy to add fonts manually — but now I can do it in 2 minutes instead of 10. Pre-load with one-click — CSS provided if I want to circumvent the plugin. It's very neat. It also provides a nice, easy way to use Variable fonts. Several builders need 1 entry per weight/style… where Yabe allows you to upload just one font-file and properly apply the variations. Once I've done 10 projects it will have paid for itself in the time-saved alone.`
     },
+    {
+        createdAt: '2023-07-01',
+        submitterName: 'Mario',
+        submitterAvatar: 'https://s.gravatar.com/avatar/f5f19b0725d80e8952685ed54feb5c824f4756dea72a3e342a933d11079b8f45?s=100',
+        submitterTitle: '',
+        message: `I used different plugins before, but they had troubles with Oxygen-builder. This one works like a charm.`
+    },
 ];
 
 const AS_SEEN_ON = [
