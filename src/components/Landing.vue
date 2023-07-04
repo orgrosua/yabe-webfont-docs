@@ -725,15 +725,15 @@ const AS_SEEN_ON = [
         logo: '/assets/landing/as-seen-on-gold-penguin.png',
     },
     {
+    	name: 'Wildcard Group',
+    	url: 'https://wildcard.fi/google-fonts-ja-gdpr/',
+    	logo: '/assets/landing/as-seen-on-wildcard.png',
+    },
+    {
         name: 'mangwp',
         url: 'https://youtu.be/M_69nks3fuU',
         logo: '/assets/landing/as-seen-on-mangwp.png',
     },
-    // {
-    // 	name: 'Wildcard Group',
-    // 	url: 'https://wildcard.fi/google-fonts-ja-gdpr/',
-    // 	logo: '',
-    // },
 ];
 
 const VISUAL_BUILDERS = [
