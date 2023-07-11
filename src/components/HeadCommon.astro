@@ -25,7 +25,7 @@ const googleFontsFamilies = [
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@master/normal.css@beta" />
 <script type="module">
 	import ThemeService from 'https://cdn.jsdelivr.net/npm/theme-service@beta/+esm';
-	import { MasterCSS } from 'https://cdn.jsdelivr.net/npm/@master/css@beta/dist/index.bundle.mjs';
+	import { initRuntime } from 'https://cdn.jsdelivr.net/npm/@master/css@beta/dist/index.bundle.mjs';
 
 	const themeService = new ThemeService({
 		store: 'theme',
@@ -35,7 +35,7 @@ const googleFontsFamilies = [
 
 	const config = {};
 
-	const masterCSS = new MasterCSS(config);
+	const masterCSS = new initRuntime(config);
 
 	window.masterCSS = masterCSS;
 </script>
