@@ -730,6 +730,11 @@ const AS_SEEN_ON = [
     	logo: '/assets/landing/as-seen-on-wildcard.png',
     },
     {
+        name: 'Toolonomy',
+        url: 'https://toolonomy.com/yabe-webfont-review/',
+        logo: '/assets/landing/as-seen-on-toolonomy.png',
+    },
+    {
         name: 'mangwp',
         url: 'https://youtu.be/M_69nks3fuU',
         logo: '/assets/landing/as-seen-on-mangwp.png',
