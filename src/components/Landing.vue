@@ -543,6 +543,13 @@
 
 <script setup>
 import { ref, watch, computed, onBeforeMount, onMounted } from 'vue';
+import { Rive } from '@rive-app/canvas';
+
+/** @type {Rive} */
+let pupRive = null;
+const koFiHovered = ref(false);
+
+const pupRiveCanvas = ref(null);
 
 const isMobileMenuOpen = ref(false);
 
@@ -1003,6 +1010,10 @@ const availablePricing = computed(() => {
     return PRICING.filter(item => item.duration === selectedPricingDuration.value);
 });
 
+watch(koFiHovered, (value) => {
+    pupRive.stateMachineInputs('YeyMachine')[0].value = value;
+});
+
 watch(isMobileMenuOpen, (newState, oldState) => {
     if (newState) {
         setTimeout(() => {
@@ -1072,6 +1083,17 @@ onMounted(() => {
 
         window.themeService.current = 'light';
     }, 100);
+
+    
+    pupRive = new Rive({
+        src: pupRiveFile,
+        canvas: 'https://cdn.jsdelivr.net/gh/orgrosua/yabe-webfont-docs/public/assets/landing/pup.riv',
+        autoplay: true,
+        stateMachines: 'YeyMachine',
+        onLoad: () => {
+            pupRive.resizeDrawingSurfaceToCanvas();
+        },
+    });
 
     // Refresh the lightbox when the DOM is ready
     window.refreshFsLightbox();
