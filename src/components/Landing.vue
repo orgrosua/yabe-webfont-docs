@@ -22,6 +22,7 @@
                     <a href="/#features" class="px:15 bg:blue-90:hover py:8:hover r:8">Features</a>
                     <a href="/#pricing" class="px:15 bg:blue-90:hover py:8:hover r:8">Pricing</a>
                     <a href="/en" class="px:15 bg:blue-90:hover py:8:hover r:8">Documentation</a>
+                    <a href="https://www.facebook.com/groups/1142662969627943" class="px:15 bg:blue-90:hover py:8:hover r:8">Community</a>
                     <!-- <a class="px:15 bg:blue-90:hover py:8:hover r:8">Blogs</a> -->
                     <a href="https://rosua.org/checkout/order-history" class="px:15 bg:blue-90:hover py:8:hover r:8">Account</a>
                 </div>
@@ -171,16 +172,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="badges__item">
-                        <div class="f:24">
-                            <i class="fa-solid fa-badge-dollar fg:#29b077"></i>
-                        </div>
-                        <div class="f:12 text:left">
-                            <strong>14-day Money</strong>
-                            <br> Back Guarantee
-                        </div>
-                    </div> -->
-
                     <div class="badges__item">
                         <div class="f:24">
                             <i class="fa-solid fa-headset"></i>
@@ -207,16 +198,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="badges__item">
-                        <div class="f:24 fg:#4e6fc3">
-                            <i class="fa-brands fa-wordpress"></i>
-                        </div>
-                        <div class="f:12 text:left">
-                            <strong> {{ activeSites }}+ Active</strong>
-                            Sites
-                        </div>
-                    </div> -->
-
                     <div class="badges__item">
                         <div class="f:24 fg:#4e6fc3">
                             <i class="fa-brands fa-wordpress"></i>
@@ -225,6 +206,21 @@
                             <strong>{{ totalDownloads }}+ Download</strong> & Counting
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Sponsors -->
+            <div class="mx:auto my:40 flex flex:row align-items:center gap:10">
+                <a href="https://github.com/sponsors/suabahasa?o=esb" target="_blank" class="github-sponsor px:16 py:5 bg:#fafbfc bg:#f3f4f6:hover font:medium lh:20px r:6 b:1|solid|rgba(27,31,35,.15) ~background-color|.2s|cubic-bezier(0.3,0,0.5,1) text:none user-select:none">
+                    <i class="fa-regular fa-heart mr:8 fg:#6a737d f:16 ~transform|.15s|cubic-bezier(0.2,0,0.13,2) scale(1) .github-sponsor:hover_{scale(1.1)}"></i>
+                    <span class="f:14 fg:#24292e text-align:center ">Sponsor</span>
+                </a>
+
+                <div class="rel flex gap-x:10">
+                    <canvas ref="pupRiveCanvas" class="abs z-index:3 h:36 top:-28 right:10"></canvas>
+                    <a @mouseenter="$event => koFiHovered = true" @mouseleave="$event => koFiHovered = false" :href="wp_v12.donate_link" target="_blank">
+                        <img class="h:28" src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_dark.png" alt="Buy Me a Coffee at ko-fi.com" />
+                    </a>
                 </div>
             </div>
 
@@ -400,7 +396,6 @@
                             </figcaption>
                         </figure>
                     </div>
-
                 </div>
 
                 <div class="mt:30 text:center">
@@ -725,9 +720,9 @@ const AS_SEEN_ON = [
         logo: '/assets/landing/as-seen-on-gold-penguin.png',
     },
     {
-    	name: 'Wildcard Group',
-    	url: 'https://wildcard.fi/google-fonts-ja-gdpr/',
-    	logo: '/assets/landing/as-seen-on-wildcard.png',
+        name: 'Wildcard Group',
+        url: 'https://wildcard.fi/google-fonts-ja-gdpr/',
+        logo: '/assets/landing/as-seen-on-wildcard.png',
     },
     {
         name: 'Toolonomy',
