@@ -1086,8 +1086,8 @@ onMounted(() => {
 
     
     pupRive = new Rive({
-        src: pupRiveFile,
-        canvas: 'https://cdn.jsdelivr.net/gh/orgrosua/yabe-webfont-docs/public/assets/landing/pup.riv',
+        src: 'https://cdn.jsdelivr.net/gh/orgrosua/yabe-webfont-docs/public/assets/landing/pup.riv',
+        canvas: pupRiveCanvas.value,
         autoplay: true,
         stateMachines: 'YeyMachine',
         onLoad: () => {
