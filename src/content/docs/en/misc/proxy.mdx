@@ -16,7 +16,7 @@ Use the following code snippet with your theme's `functions.php` file or snippet
  * This bypasses the access block to Google Fonts CDN server in some countries.
  */
 add_filter('f!yabe/webfont/utils/upload:remote_upload_media.file_url', function ($file_url) {
-    if (!str_starts_with($url, 'https://fonts.gstatic.com')) {
+    if (!str_starts_with($file_url, 'https://fonts.gstatic.com')) {
         return $file_url;
     }
 
