@@ -1,0 +1,31 @@
+---
+title: 'Proxy Google Fonts CDN'
+description: 'Proxy Google Fonts CDN through the hosted Wakufont server.'
+i18nReady: false
+---
+
+Some countries block Google Fonts CDN. If you are in one of those countries, you can use the hosted Wakufont server to proxy the Google Fonts file URL. This feature is available on all pricing plans.
+
+Use the following code snippet with your theme's `functions.php` file or snippet plugin to proxy the Google Fonts file URL through the hosted Wakufont server.
+
+```php
+<?php
+
+/**
+ * Proxy the Google Fonts file's URL. 
+ * This bypasses the access block to Google Fonts CDN server in some countries.
+ */
+add_filter('f!yabe/webfont/utils/upload:remote_upload_media.file_url', function ($file_url) {
+    if (!str_starts_with($url, 'https://fonts.gstatic.com')) {
+        return $file_url;
+    }
+
+    return sprintf(
+        '%s%s?url=%s',
+        rtrim(apply_filters('f!yabe/webfont/font:wakufont_self_hosted', \YABE_WEBFONT::HOSTED_WAKUFONT), '/'),
+        '/tool/proxy/stream',
+        urlencode($file_url)
+    );
+}, 10);
+
+```

@@ -41,4 +41,5 @@ export default [
 	{ text: 'Misc', header: true, type: 'learn', key: 'misc' },
 	{ text: 'Convert TTF to WOFF2', slug: 'misc/convert-ttf-woff2', key: 'misc/convert-ttf-woff2' },
 	{ text: 'Without the Plugin', slug: 'misc/no-plugin', key: 'misc/no-plugin' },
+	{ text: 'Proxy', slug: 'misc/proxy', key: 'misc/proxy' },
 ] as const;
