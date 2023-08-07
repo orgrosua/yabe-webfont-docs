@@ -426,7 +426,7 @@
             </div>
 
             <div class="flex justify-content:center my:30">
-                <fieldset class="grid-cols:2 gap-x:4 rounded p:4 text:center f:14 font:semibold lh:1.6 box-shadow:rgb(255,255,255)|0px|0px|0px|0px|inset,rgb(229,231,235)|0px|0px|0px|1px|inset,rgba(0,0,0,0)|0px|0px|0px|0px">
+                <!-- <fieldset class="grid-cols:2 gap-x:4 rounded p:4 text:center f:14 font:semibold lh:1.6 box-shadow:rgb(255,255,255)|0px|0px|0px|0px|inset,rgb(229,231,235)|0px|0px|0px|1px|inset,rgba(0,0,0,0)|0px|0px|0px|0px">
                     <legend class="sr-only">Payment frequency</legend>
                     <label @click="selectedPricingDuration = 'year'" :class="[selectedPricingDuration === 'year' ? 'bg:blue fg:white' : 'fg:gray-40 bg:blue/.1:hover']" class="cursor:pointer rounded px:10 py:4">
                         <input type="radio" name="frequency" value="annually" class="sr-only">
@@ -436,7 +436,7 @@
                         <input type="radio" name="frequency" value="one-time" class="sr-only">
                         <span>One-time</span>
                     </label>
-                </fieldset>
+                </fieldset> -->
             </div>
 
             <div class="pricing__wall w:full bg:white my:30 ">
