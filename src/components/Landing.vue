@@ -745,6 +745,11 @@ const AS_SEEN_ON = [
 
 const VISUAL_BUILDERS = [
     {
+        name: 'Builderius',
+        url: '/en/integration/builderius',
+        icon: 'assets/landing/builder-builderius.svg',
+    },
+    {
         name: 'Classic Editor',
         url: '/en/integration/classic-editor',
         icon: 'assets/landing/builder-classic-editor.png',
@@ -791,12 +796,6 @@ const VISUAL_BUILDERS = [
         name: 'Bricks',
         url: '/en/integration/bricks',
         icon: 'assets/landing/builder-bricks.svg',
-        pro: true,
-    },
-    {
-        name: 'Builderius',
-        url: '/en/integration/builderius',
-        icon: 'assets/landing/builder-builderius.svg',
         pro: true,
     },
     {
