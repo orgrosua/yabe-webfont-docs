@@ -415,11 +415,13 @@
                 </div>
             </div> -->
 
+            <!--
             <div class="flex flex:column align-items:center mb:16">
                 <div class="px:16 py:6 r:8 bg:crimson-95 fg:crimson-55 b:1|solid|crimson-65 text:center font:medium ls:2 lh:1.5">
                     <i class="fa-solid fa-gift fg:crimson pr:6"></i> <span class="ls:1 font:bold">Black Friday & Cyber Monday</span> offer: <code class="font:extrabold bg:white">LTD plan</code>, until <span class="ls:1 font:bold">Nov 28</span>
                 </div>
             </div>
+            -->
 
             <!-- Title -->
             <h2 class="mb:22 f:36 font:semibold text:center">Pricing</h2>
