@@ -1,6 +1,6 @@
 <template>
     <header class="sticky@md top:0 flex w:full mx:auto z-index:99999 bg:white justify-content:center bb:1|solid|rgba(0,0,0,0.1)">
-        <div class="flex w:full max-w:xl align-items:center px:32">
+        <div class="flex w:full max-w:screen-xl align-items:center px:32">
             <a href="/" class="flex">
                 <h1 class="py:16 f:30">
                     <svg class="svg-inline--fa fill:current" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@
     </header>
     <main id="main">
         <!-- Intro -->
-        <div class="block-intro w:full max-w:xl mx:auto flex flex:column text:center my:60">
+        <div class="block-intro w:full max-w:screen-xl mx:auto flex flex:column text:center my:60">
             <!-- Headline -->
             <div class="headline px:20 mx:30 my:30 lh:1.4">
                 <h1 class="title mt:55 f:30 f:38@sm f:48@md font:bold fg:#222">The <span class="bg:grass-90 r:8 px:6">GDPR-friendly</span> Font Plugin for WordPress</h1>
@@ -242,7 +242,7 @@
             <!-- As seen on -->
             <div class="flex flex:column align-items:center justify-content:center mb:60 mx:30@sm mx:40@md py:30 r:8 bg:gray-98">
                 <div class="f:24 fg:gray-40 mb:20 capitalize font:medium">As seen on</div>
-                <div class="max-w:md grid-cols:1 grid-cols:2@sm grid-cols:4@md gap:20 gap:30@sm align-items:center">
+                <div class="max-w:screen-md grid-cols:1 grid-cols:2@sm grid-cols:4@md gap:20 gap:30@sm align-items:center">
                     <div v-for="seen_on in AS_SEEN_ON" class="flex justify-content:center">
                         <a :href="seen_on.url" target="_blank" rel="noopener noreferrer">
                             <img :src="seen_on.logo" :alt="seen_on.name" class="max-h:64 max-w:full" :title="seen_on.name">
@@ -253,7 +253,7 @@
         </div>
 
         <!-- Feature Section -->
-        <div id="features" class="block-features max-w:xl flex flex:column align-items:center my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
+        <div id="features" class="block-features max-w:screen-xl flex flex:column align-items:center my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
             <div class="px:8 py:4 mb:8 r:8 bg:sky-95 fg:sky-55 text:center uppercase font:bold ls:2">Fully-featured</div>
             <h2 class="mb:22 f:36 font:semibold text:center">Made for Designers and Developers</h2>
             <div class="flex text:center justify-content:center">
@@ -368,7 +368,7 @@
         </div>
 
         <!-- Testimonial -->
-        <div id="testimonials" class="block-testimonials max-w:xl flex flex:column my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
+        <div id="testimonials" class="block-testimonials max-w:screen-xl flex flex:column my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
 
             <!-- Title -->
             <h2 class="mb:22 f:36 font:semibold text:center">Wall of Loves <i class="fa-solid fa-square-heart fg:crimson"></i></h2>
@@ -407,7 +407,7 @@
         </div>
 
         <!-- Pricing -->
-        <div id="pricing" class="block-pricing max-w:xl flex flex:column my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
+        <div id="pricing" class="block-pricing max-w:screen-xl flex flex:column my:60 mx:20 mx:30@sm mx:40@md mx:auto@xl">
 
             <!-- <div class="flex flex:column align-items:center mb:16">
                 <div class="px:16 py:6 r:8 bg:crimson-95 fg:crimson-55 b:1|solid|crimson-65 text:center font:medium ls:2 lh:1.5">
